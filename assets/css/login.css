@@ -1,0 +1,220 @@
+/* Etalase Digital Stella - khusus halaman login (berdiri sendiri, tidak memuat base.css) */
+:root {
+    --langit: #ffffff;
+    --langit-2: #fff0f4;
+    --bintang: #c43d62;
+    --bintang-gelap: #641b38;
+    --bintang-terang: #ed7894;
+    --teks: #29202a;
+    --teks-lembut: #746a76;
+    --garis: #e9e0e6;
+    --garis-tegas: #d8cbd4;
+    --bahaya: #a51f3e;
+    --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: var(--teks);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background:
+        radial-gradient(ellipse 52rem 30rem at 10% -6rem, rgba(196, 61, 98, 0.13), transparent 70%),
+        radial-gradient(ellipse 40rem 26rem at 100% 100%, rgba(100, 27, 56, 0.1), transparent 70%),
+        #f8f4f6;
+}
+
+.halaman-daftar { align-items: flex-start; }
+.halaman-daftar .login { margin-block: auto; }
+
+::selection { background: rgba(196, 61, 98, 0.18); }
+
+:focus-visible {
+    outline: 3px solid rgba(196, 61, 98, 0.42);
+    outline-offset: 3px;
+}
+
+/* Kartu login: satu-satunya gerak saat halaman dimuat */
+.login {
+    width: 100%;
+    max-width: 420px;
+    background: var(--langit);
+    border: 1px solid var(--garis);
+    border-radius: 20px;
+    padding: 36px 34px 32px;
+    box-shadow: 0 1px 2px rgba(29, 36, 51, 0.04), 0 4px 10px rgba(29, 36, 51, 0.04), 0 24px 56px rgba(29, 36, 51, 0.1);
+    animation: masuk 520ms var(--ease) both;
+}
+
+@keyframes masuk {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: none; }
+}
+
+/* Merek */
+.login-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 28px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid var(--garis);
+}
+.login-brand img {
+    width: 42px;
+    height: 42px;
+    padding: 7px;
+    border: 1px solid #ead2dc;
+    border-radius: 13px;
+    background: linear-gradient(160deg, #fff, var(--langit-2));
+    box-shadow: 0 1px 2px rgba(100, 27, 56, 0.1);
+}
+.login-brand span { display: flex; flex-direction: column; line-height: 1.25; }
+.login-brand strong { font-size: 0.97rem; font-weight: 700; letter-spacing: -0.02em; }
+.login-brand small { margin-top: 4px; color: var(--teks-lembut); font-size: 0.82rem; }
+
+/* Judul */
+.login h1 {
+    margin: 0 0 6px;
+    font-size: 1.65rem;
+    font-weight: 750;
+    letter-spacing: -0.04em;
+    line-height: 1.15;
+}
+.login .bintang { color: var(--bintang); }
+.login .sub { margin: 0 0 24px; color: var(--teks-lembut); font-size: 0.95rem; }
+
+/* Form */
+.login label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 650;
+    margin: 18px 0 7px;
+    color: #2a3445;
+}
+
+.login input[type=text],
+.login input[type=password] {
+    width: 100%;
+    font: inherit;
+    padding: 12px 14px;
+    border: 1px solid var(--garis-tegas);
+    border-radius: 11px;
+    background: var(--langit);
+    color: var(--teks);
+    box-shadow: 0 1px 2px rgba(29, 36, 51, 0.05);
+    transition: border-color 160ms var(--ease), box-shadow 160ms var(--ease);
+}
+.login input::placeholder { color: #98a1b2; }
+.login input[type=text]:hover, .login input[type=password]:hover { border-color: #b9c1ce; }
+.login input[type=text]:focus, .login input[type=password]:focus {
+    border-color: var(--bintang);
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(196, 61, 98, 0.13), 0 1px 2px rgba(53, 18, 38, 0.05);
+}
+
+/* Isian otomatis browser tidak merusak warna kartu */
+.login input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px #fff inset;
+    -webkit-text-fill-color: var(--teks);
+}
+
+/* Tombol masuk */
+.login button {
+    width: 100%;
+    margin-top: 26px;
+    font: inherit;
+    font-weight: 680;
+    letter-spacing: -0.005em;
+    padding: 12px;
+    border: 1px solid var(--bintang);
+    border-radius: 11px;
+    background: linear-gradient(155deg, #e9839b 0%, #c43d62 38%, #681d3d 100%);
+    color: #fff;
+    cursor: pointer;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28), inset 0 -1px 0 rgba(53, 10, 30, 0.2), 0 2px 5px rgba(83, 20, 48, 0.22), 0 8px 18px rgba(133, 33, 68, 0.2);
+    transition: background 160ms var(--ease), border-color 160ms var(--ease), box-shadow 200ms var(--ease), transform 160ms var(--ease);
+}
+.login button:hover {
+    background: linear-gradient(155deg, #cb5272 0%, #8b2549 55%, #50142f 100%);
+    border-color: var(--bintang-gelap);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 2px 5px rgba(83, 20, 48, 0.25), 0 12px 24px rgba(83, 20, 48, 0.24);
+    transform: translateY(-1px);
+}
+.login button:active { transform: translateY(0); box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2); }
+.login button:disabled { opacity: 0.55; cursor: not-allowed; transform: none; box-shadow: none; }
+
+.login-link {
+    margin: 20px 0 0;
+    text-align: center;
+    color: var(--teks-lembut);
+    font-size: 0.92rem;
+}
+.login-link a { color: var(--bintang); font-weight: 650; }
+.login .opsional, .login .bantuan { color: var(--teks-lembut); font-weight: 400; }
+.login .bantuan { display: block; margin-top: 5px; font-size: 0.82rem; }
+.login .galat p { margin: 0; }
+.login .galat p + p { margin-top: 5px; }
+.login .berhasil {
+    margin: 0 0 18px;
+    padding: 12px 14px;
+    border: 1px solid #b7dfc3;
+    border-radius: 11px;
+    background: #f0fff4;
+    color: #27613a;
+}
+.login .login-tombol {
+    display: block;
+    padding: 12px;
+    border: 1px solid var(--bintang);
+    border-radius: 11px;
+    background: linear-gradient(155deg, #e9839b 0%, #c43d62 38%, #681d3d 100%);
+    color: #fff;
+    font-weight: 680;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Pesan galat: garis aksen di kiri, sama seperti notifikasi di dalam aplikasi */
+.login .galat {
+    position: relative;
+    margin: 0 0 6px;
+    padding: 11px 14px 11px 18px;
+    border-radius: 11px;
+    background: #fff3f4;
+    border: 1px solid #f2ccd2;
+    color: #7a2a37;
+    font-size: 0.93rem;
+    line-height: 1.5;
+    overflow: hidden;
+}
+.login .galat::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 4px;
+    background: var(--bahaya);
+    opacity: 0.6;
+}
+
+@media (max-width: 480px) {
+    .login { padding: 28px 22px 24px; border-radius: 18px; }
+    .login-brand { margin-bottom: 22px; padding-bottom: 18px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .login { animation: none; }
+    .login button { transition: none; }
+}

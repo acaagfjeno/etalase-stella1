@@ -1,0 +1,56 @@
+/* tabel.css - halaman berisi tabel: projek saya, kelola projek/siswa/admin, dashboard */
+.tabel-bungkus {
+    overflow-x: auto;
+    background: var(--permukaan);
+    border: 1px solid var(--garis);
+    border-radius: var(--radius);
+    box-shadow: var(--bayangan);
+    -webkit-overflow-scrolling: touch;
+}
+
+.tabel { width: 100%; border-collapse: collapse; min-width: 560px; }
+
+.tabel th, .tabel td {
+    text-align: left;
+    padding: 15px 18px;
+    border-bottom: 1px solid var(--garis);
+    vertical-align: middle;
+}
+
+/* Kepala tabel: huruf biasa dan tebal, tanpa kapital semua agar tetap mudah dibaca */
+.tabel th {
+    background: linear-gradient(180deg, #fff8fa, #f4e8ed);
+    border-bottom: 1px solid var(--garis-tegas);
+    font-size: 0.85rem;
+    font-weight: 650;
+    letter-spacing: -0.005em;
+    color: #64233f;
+    white-space: nowrap;
+}
+
+.tabel td { font-size: 0.94rem; font-variant-numeric: tabular-nums; }
+
+.tabel tbody tr { transition: background-color 160ms var(--ease); }
+.tabel tbody tr:hover { background: #fff3f6; }
+.tabel tr:last-child td { border-bottom: 0; }
+
+/* Kolom aksi */
+.tabel .aksi { white-space: nowrap; text-align: right; }
+.tabel .aksi > * { margin-right: 6px; }
+.tabel .aksi > *:last-child { margin-right: 0; }
+
+/* Gambar mini */
+.thumb {
+    width: 72px;
+    height: 48px;
+    object-fit: cover;
+    border-radius: 9px;
+    border: 1px solid var(--garis);
+    background: #eef1f5;
+    box-shadow: var(--bayangan-kecil);
+}
+
+@media (max-width: 760px) {
+    .tabel th, .tabel td { padding: 13px 14px; }
+    .thumb { width: 60px; height: 40px; }
+}

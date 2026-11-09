@@ -1,0 +1,377 @@
+/* form.css - halaman form: tambah/edit projek, tambah/edit siswa & admin */
+.form {
+    background: var(--permukaan);
+    border: 1px solid var(--garis);
+    border-radius: calc(var(--radius) + 2px);
+    padding: 32px;
+    max-width: 640px;
+    box-shadow: var(--bayangan);
+}
+
+.edit-projek-halaman {
+    position: relative;
+    left: 50%;
+    width: min(calc(100vw - 56px), 1600px);
+    margin: 0;
+    transform: translateX(-50%);
+}
+
+.tambah-projek-halaman {
+    position: relative;
+    left: 50%;
+    width: min(calc(100vw - 56px), 1600px);
+    margin: 0;
+    transform: translateX(-50%);
+}
+
+.edit-projek-halaman .judul-halaman,
+.tambah-projek-halaman .judul-halaman {
+    justify-content: center;
+    margin-bottom: 22px;
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+.form-projek-edit,
+.form-projek-tambah {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
+    column-gap: 26px;
+    row-gap: 0;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 34px;
+}
+
+.editor-projek-layout {
+    display: grid;
+    grid-template-columns: minmax(230px, 0.82fr) minmax(0, 2.35fr) minmax(230px, 0.82fr);
+    align-items: stretch;
+    gap: 22px;
+    width: 100%;
+}
+
+.editor-catatan {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+    min-width: 0;
+    min-height: 100%;
+    padding: clamp(26px, 2.6vw, 42px) clamp(22px, 2vw, 32px);
+    overflow: hidden;
+    border: 1px solid #ead8e0;
+    border-radius: 17px;
+    background:
+        radial-gradient(ellipse 11rem 9rem at 100% 0, rgba(237, 120, 148, 0.12), transparent 72%),
+        linear-gradient(155deg, #fff 0%, #fbf5f7 100%);
+    box-shadow: 0 12px 30px rgba(53, 18, 38, 0.06);
+}
+
+.editor-catatan::after {
+    position: absolute;
+    right: -44px;
+    bottom: -52px;
+    width: 118px;
+    height: 118px;
+    border: 1px solid rgba(100, 27, 56, 0.09);
+    border-radius: 50%;
+    box-shadow: 0 0 0 15px rgba(100, 27, 56, 0.025);
+    content: "";
+    pointer-events: none;
+}
+
+.editor-catatan-kiri {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.15);
+    background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.13), transparent 56%),
+        linear-gradient(160deg, #6e1d3d 0%, #46132d 100%);
+    box-shadow: 0 16px 34px rgba(70, 19, 45, 0.17);
+}
+
+.editor-catatan-kiri::after {
+    border-color: rgba(255, 255, 255, 0.14);
+    box-shadow: 0 0 0 15px rgba(255, 255, 255, 0.035);
+}
+
+.editor-catatan-nomor {
+    position: relative;
+    z-index: 1;
+    display: block;
+    color: #a94a69;
+    font-size: 0.62rem;
+    font-weight: 750;
+    letter-spacing: 0.13em;
+}
+
+.editor-catatan-kiri .editor-catatan-nomor { color: #f0adbf; }
+
+.editor-catatan h2 {
+    position: relative;
+    z-index: 1;
+    margin: auto 0 14px;
+    color: #4f1934;
+    font-size: clamp(1.35rem, 2vw, 1.8rem);
+    line-height: 1.2;
+    letter-spacing: -0.035em;
+}
+
+.editor-catatan-kiri h2 { color: #fff; }
+
+.editor-catatan p {
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    color: #776b74;
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+.editor-catatan-kiri p { color: rgba(255, 255, 255, 0.74); }
+
+.editor-garis {
+    position: relative;
+    z-index: 1;
+    width: 34px;
+    height: 2px;
+    margin: 30px 0 22px;
+    border-radius: 2px;
+    background: linear-gradient(90deg, #ed7894, #8d3454);
+}
+
+.editor-catatan-kiri .editor-garis { background: linear-gradient(90deg, #f7bdca, #a94a69); }
+
+.editor-catatan-poin,
+.editor-check {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+    color: #674457;
+    font-size: 0.84rem;
+    font-weight: 600;
+    line-height: 1.45;
+}
+
+.editor-catatan-poin i {
+    display: grid;
+    width: 23px;
+    height: 23px;
+    flex: 0 0 auto;
+    place-items: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.08);
+    color: #f4bdcb;
+    font-size: 0.58rem;
+    font-style: normal;
+}
+
+.editor-cap {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    width: 40px;
+    height: 40px;
+    place-items: center;
+    margin: auto 0 24px;
+    border: 1px solid #e9c9d4;
+    border-radius: 12px;
+    background: linear-gradient(145deg, #fff, #f7e4eb);
+    color: #772543;
+    font-size: 1.2rem;
+    font-weight: 700;
+    box-shadow: inset 0 1px 0 #fff, 0 5px 12px rgba(100, 27, 56, 0.08);
+}
+
+.editor-catatan-kanan h2 { margin: 0 0 14px; }
+
+.editor-check { color: #5d5260; font-weight: 500; }
+
+.editor-check i {
+    width: 7px;
+    height: 7px;
+    flex: 0 0 auto;
+    border: 1.5px solid #b84b6c;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(184, 75, 108, 0.08);
+}
+
+.form-projek-edit .field,
+.form-projek-tambah .field { min-width: 0; }
+.form-projek-edit .field-judul,
+.form-projek-tambah .field-judul { grid-column: 1; grid-row: 1; }
+.form-projek-edit .field-deskripsi,
+.form-projek-tambah .field-deskripsi { grid-column: 2; grid-row: 1 / span 2; }
+.form-projek-edit .field-gambar,
+.form-projek-tambah .field-gambar { grid-column: 1; grid-row: 2 / span 2; }
+.form-projek-edit .field-link-pendukung,
+.form-projek-tambah .field-link-pendukung { grid-column: 2; grid-row: 3; }
+.form-projek-edit .field-link-demo,
+.form-projek-tambah .field-link-demo { grid-column: 2; grid-row: 4; }
+.form > .field:first-of-type > label { margin-top: 0; }
+
+.form-projek-edit .field-deskripsi textarea,
+.form-projek-tambah .field-deskripsi textarea { min-height: 210px; }
+.form-projek-edit .field-gambar input[type=file],
+.form-projek-tambah .field-gambar input[type=file] { min-height: 48px; }
+.form-projek-edit .preview {
+    width: 100%;
+    max-height: 250px;
+    margin-top: 14px;
+    object-fit: cover;
+}
+
+.form-projek-edit .aksi-form,
+.form-projek-tambah .aksi-form {
+    grid-column: 1 / -1;
+    justify-content: center;
+    margin-top: 26px;
+    padding-top: 22px;
+    border-top: 1px solid var(--garis);
+}
+
+.form label {
+    display: block;
+    font-size: 0.925rem;
+    font-weight: 650;
+    letter-spacing: -0.005em;
+    margin: 20px 0 8px;
+    color: #2a3445;
+}
+.form label:first-child { margin-top: 0; }
+
+.form input[type=text], .form input[type=password], .form input[type=url],
+.form input[type=file], .form textarea {
+    width: 100%;
+    font: inherit;
+    padding: 11px 14px;
+    border: 1px solid var(--garis-tegas);
+    border-radius: var(--radius-kecil);
+    background: var(--permukaan);
+    color: var(--teks);
+    box-shadow: var(--bayangan-kecil);
+    transition: border-color 160ms var(--ease), box-shadow 160ms var(--ease), background-color 160ms var(--ease);
+}
+.form input::placeholder, .form textarea::placeholder { color: #98a1b2; }
+.form input:hover, .form textarea:hover { border-color: #b9c1ce; }
+.form input:focus, .form textarea:focus {
+    border-color: var(--bintang);
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(196, 61, 98, 0.13), var(--bayangan-kecil);
+}
+
+.form textarea { min-height: 128px; line-height: 1.65; resize: vertical; }
+
+/* Input file: tombol "Pilih file" bawaan browser ikut diberi gaya */
+.form input[type=file] { padding: 8px; cursor: pointer; background: var(--kertas); }
+.form input[type=file]::file-selector-button {
+    font: inherit;
+    font-size: 0.875rem;
+    font-weight: 620;
+    color: var(--teks);
+    background: var(--permukaan);
+    border: 1px solid var(--garis-tegas);
+    border-radius: 8px;
+    padding: 6px 14px;
+    margin-right: 12px;
+    cursor: pointer;
+    transition: background-color 160ms var(--ease), border-color 160ms var(--ease), color 160ms var(--ease);
+}
+.form input[type=file]::file-selector-button:hover {
+    background: var(--langit-2);
+    border-color: #ebb9c2;
+    color: var(--bintang-gelap);
+}
+
+/* Field yang gagal validasi (dipakai jika server menambahkan aria-invalid) */
+.form input[aria-invalid=true], .form textarea[aria-invalid=true] { border-color: var(--bahaya); }
+.form input[aria-invalid=true]:focus, .form textarea[aria-invalid=true]:focus {
+    box-shadow: 0 0 0 4px rgba(165, 31, 51, 0.14), var(--bayangan-kecil);
+}
+
+.form small { display: block; color: var(--teks-lembut); font-size: 0.85rem; line-height: 1.5; margin-top: 6px; }
+.opsional { font-weight: 400; color: var(--teks-lembut); }
+.galat { color: var(--bahaya); margin: 7px 0 0; font-size: 0.9rem; font-weight: 500; line-height: 1.45; }
+
+.preview {
+    margin-top: 12px;
+    max-height: 220px;
+    border-radius: 12px;
+    border: 1px solid var(--garis);
+    box-shadow: var(--bayangan-kecil);
+}
+
+.label-kredit { width: min(calc(100vw - 56px), 1600px); margin: 16px auto 0; color: var(--teks-lembut); font-size: 0.85rem; text-align: center; }
+
+@media (max-width: 1100px) {
+    .editor-projek-layout { grid-template-columns: minmax(0, 1fr); }
+    .form-projek-edit,
+    .form-projek-tambah { order: 1; }
+    .editor-catatan-kiri { order: 2; }
+    .editor-catatan-kanan { order: 3; }
+    .editor-catatan { min-height: 0; }
+    .editor-catatan h2 { margin: 14px 0 10px; }
+    .editor-cap { margin: 14px 0 0; }
+}
+
+@media (max-width: 520px) {
+    .form { padding: 22px 18px; }
+    .form input[type=file]::file-selector-button { display: block; margin: 0 0 8px; }
+}
+
+@media (max-width: 760px) {
+    .edit-projek-halaman,
+    .tambah-projek-halaman,
+    .label-kredit { width: calc(100vw - 36px); }
+
+    .editor-projek-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+    }
+    .editor-catatan {
+        padding: 18px;
+    }
+    .editor-catatan-kiri { order: 2; }
+    .editor-catatan-kanan { order: 3; }
+    .editor-catatan h2 { margin: 14px 0 10px; }
+    .editor-garis { margin: 16px 0 12px; }
+    .editor-cap { margin: 14px 0 0; }
+    .editor-catatan-poin,
+    .editor-check { display: inline-flex; margin: 10px 12px 0 0; }
+
+    .form-projek-edit,
+    .form-projek-tambah {
+        order: 1;
+        grid-template-columns: minmax(0, 1fr);
+        padding: 26px;
+    }
+    .form-projek-edit .field-judul,
+    .form-projek-edit .field-deskripsi,
+    .form-projek-edit .field-gambar,
+    .form-projek-edit .field-link-pendukung,
+    .form-projek-edit .field-link-demo,
+    .form-projek-tambah .field-judul,
+    .form-projek-tambah .field-deskripsi,
+    .form-projek-tambah .field-gambar,
+    .form-projek-tambah .field-link-pendukung,
+    .form-projek-tambah .field-link-demo {
+        grid-column: 1;
+        grid-row: auto;
+    }
+    .form-projek-edit .field-deskripsi textarea,
+    .form-projek-tambah .field-deskripsi textarea { min-height: 150px; }
+    .form-projek-edit .aksi-form,
+    .form-projek-tambah .aksi-form { grid-column: 1; }
+}
+
+@media (max-width: 520px) {
+    .form-projek-edit,
+    .form-projek-tambah { padding: 22px 18px; }
+}

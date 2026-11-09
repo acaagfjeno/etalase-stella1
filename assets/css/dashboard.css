@@ -1,0 +1,69 @@
+/* dashboard.css - kartu statistik di admin/dashboard.php */
+.statistik {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.stat {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    background:
+        radial-gradient(circle 9rem at 100% 0, rgba(196, 61, 98, 0.08), transparent 75%),
+        var(--permukaan);
+    border: 1px solid var(--garis);
+    border-radius: var(--radius);
+    padding: 22px 24px 22px 28px;
+    box-shadow: var(--bayangan);
+    overflow: hidden;
+    transition: box-shadow 220ms var(--ease), border-color 220ms var(--ease), transform 220ms var(--ease);
+}
+
+/* Aksen merah di sisi kiri */
+.stat::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 4px;
+    background: linear-gradient(180deg, var(--bintang-terang), var(--bintang) 60%, var(--bintang-gelap));
+}
+
+.stat:hover {
+    border-color: #ebc3ca;
+    box-shadow: var(--bayangan-besar);
+    transform: translateY(-2px);
+}
+
+/* Angka utama */
+.stat strong {
+    display: block;
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: 760;
+    line-height: 1.05;
+    letter-spacing: -0.045em;
+    font-variant-numeric: tabular-nums;
+    color: var(--bintang-gelap);
+}
+
+/* Keterangan di bawah angka */
+.stat span {
+    color: var(--teks-lembut);
+    font-size: 0.925rem;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+@media (max-width: 560px) {
+    .statistik { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .stat { padding: 18px 18px 18px 22px; }
+}
+
+@media (max-width: 380px) {
+    .statistik { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .stat:hover { transform: none; }
+}

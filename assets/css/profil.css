@@ -1,0 +1,190 @@
+/* profil.css - profil dan keamanan akun */
+.profil-halaman {
+    width: min(100%, 1000px);
+    margin: 0 auto;
+}
+
+.profil-heading {
+    margin-bottom: 24px;
+    padding: 6px 0 20px;
+    border-bottom: 1px solid var(--garis);
+}
+
+.profil-eyebrow {
+    margin: 0 0 7px;
+    color: var(--bintang-gelap);
+    font-size: 0.68rem;
+    font-weight: 760;
+    letter-spacing: 0.14em;
+}
+
+.profil-heading > p:last-child {
+    margin: 8px 0 0;
+    color: var(--teks-lembut);
+}
+
+.profil-form {
+    overflow: hidden;
+    border: 1px solid #e8dbe2;
+    border-radius: 20px;
+    background: var(--permukaan);
+    box-shadow: var(--bayangan);
+}
+
+.profil-identitas {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    padding: 28px 32px;
+    background:
+        linear-gradient(105deg, transparent 0 32%, rgba(255, 255, 255, 0.1) 43%, transparent 55%),
+        linear-gradient(115deg, #451329, #8d3454 48%, #641b38);
+    color: #fff;
+}
+
+.profil-foto {
+    display: grid;
+    width: 104px;
+    height: 104px;
+    flex: 0 0 auto;
+    place-items: center;
+    overflow: hidden;
+    border: 3px solid rgba(255, 255, 255, 0.78);
+    border-radius: 50%;
+    background: linear-gradient(145deg, #ed7894, #641b38);
+    color: #fff;
+    font-size: 2.4rem;
+    font-weight: 750;
+    box-shadow: 0 8px 22px rgba(32, 8, 22, 0.24), 0 0 0 6px rgba(255, 255, 255, 0.1);
+}
+
+.profil-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profil-foto img[hidden] { display: none; }
+
+.profil-identitas-teks { min-width: 0; }
+.profil-identitas-teks .profil-eyebrow { margin-bottom: 5px; color: #f4b8c8; }
+.profil-identitas-teks h2 { overflow-wrap: anywhere; margin: 0; color: #fff; font-size: 1.5rem; }
+.profil-identitas-teks > p:not(.profil-eyebrow) { margin: 3px 0 12px; color: rgba(255, 255, 255, 0.74); }
+
+.profil-pilih-foto {
+    display: inline-flex;
+    align-items: center;
+    min-height: 34px;
+    padding: 6px 12px;
+    border: 1px solid rgba(255, 255, 255, 0.38);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 650;
+    transition: background-color 160ms var(--ease);
+}
+
+.profil-pilih-foto:hover { background: rgba(255, 255, 255, 0.2); }
+.profil-file { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
+.profil-file:focus-visible + small { outline: 2px solid #fff; outline-offset: 3px; }
+.profil-identitas-teks > small { display: block; margin-top: 6px; color: rgba(255, 255, 255, 0.68); font-size: 0.74rem; }
+.profil-identitas-teks .galat { color: #ffe0e4; }
+
+.profil-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+    padding: 26px 30px 8px;
+}
+
+.profil-bagian {
+    min-width: 0;
+    padding: 22px;
+    border: 1px solid var(--garis);
+    border-radius: 14px;
+    background: linear-gradient(145deg, #fff, #fdfafb);
+}
+
+.profil-bagian-heading {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--garis);
+}
+
+.profil-bagian-nomor {
+    display: grid;
+    width: 32px;
+    height: 32px;
+    flex: 0 0 auto;
+    place-items: center;
+    border: 1px solid #ecd5de;
+    border-radius: 9px;
+    background: #fff1f5;
+    color: var(--bintang-gelap);
+    font-size: 0.72rem;
+    font-weight: 750;
+}
+
+.profil-bagian-heading h2 { margin: 0; font-size: 1.05rem; }
+.profil-bagian-heading p { margin: 3px 0 0; color: var(--teks-lembut); font-size: 0.8rem; line-height: 1.5; }
+
+.profil-form label:not(.profil-pilih-foto) {
+    display: block;
+    margin: 16px 0 7px;
+    color: #3c303c;
+    font-size: 0.87rem;
+    font-weight: 650;
+}
+
+.profil-form input[type=text],
+.profil-form input[type=password] {
+    width: 100%;
+    padding: 11px 13px;
+    border: 1px solid var(--garis-tegas);
+    border-radius: 9px;
+    background: #fff;
+    color: var(--teks);
+    font: inherit;
+    font-size: 0.9rem;
+    box-shadow: var(--bayangan-kecil);
+    transition: border-color 160ms var(--ease), box-shadow 160ms var(--ease);
+}
+
+.profil-form input:focus {
+    border-color: var(--bintang);
+    outline: 0;
+    box-shadow: 0 0 0 3px rgba(196, 61, 98, 0.12);
+}
+
+.profil-form .profil-bagian > small { display: block; margin-top: 6px; color: var(--teks-lembut); font-size: 0.74rem; }
+.profil-form .galat { margin: 6px 0 0; color: var(--bahaya); font-size: 0.8rem; }
+
+.profil-aksi {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 14px 30px 0;
+    padding: 20px 0 26px;
+    border-top: 1px solid var(--garis);
+}
+
+@media (max-width: 700px) {
+    .profil-grid { grid-template-columns: minmax(0, 1fr); padding: 20px 20px 4px; }
+    .profil-identitas { padding: 23px 22px; }
+    .profil-aksi { margin-right: 20px; margin-left: 20px; }
+}
+
+@media (max-width: 480px) {
+    .profil-identitas { align-items: flex-start; gap: 16px; padding: 20px 16px; }
+    .profil-foto { width: 76px; height: 76px; font-size: 1.8rem; }
+    .profil-identitas-teks h2 { font-size: 1.2rem; }
+    .profil-identitas-teks > p:not(.profil-eyebrow) { font-size: 0.82rem; }
+    .profil-grid { gap: 14px; padding: 16px 14px 4px; }
+    .profil-bagian { padding: 17px; }
+    .profil-aksi { margin: 12px 14px 0; }
+}

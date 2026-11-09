@@ -1,0 +1,59 @@
+/* detail.css - halaman detail projek (siswa/detail.php) */
+.detail {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: 40px;
+    align-items: start;
+    background: var(--permukaan);
+    border: 1px solid var(--garis);
+    border-radius: calc(var(--radius) + 4px);
+    padding: 32px;
+    margin-bottom: 22px;
+    box-shadow: var(--bayangan);
+}
+
+/* Gambar: bingkai tipis dan bayangan lembut agar terasa seperti pajangan */
+.detail-gambar {
+    width: 100%;
+    max-height: 560px;
+    object-fit: cover;
+    border-radius: 14px;
+    border: 1px solid var(--garis);
+    background: #eef1f5;
+    box-shadow: var(--bayangan-kecil);
+}
+
+/* Kolom teks: tetap terlihat di layar saat gambar tinggi dan halaman di-scroll */
+.detail > div:not(:first-child) { min-width: 0; }
+
+.detail h1 { margin-bottom: 0; }
+
+.meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 14px;
+    color: var(--teks-lembut);
+    font-size: 0.925rem;
+    margin: 12px 0 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--garis);
+}
+
+.deskripsi {
+    max-width: 65ch;
+    line-height: 1.8;
+    color: #2c3547;
+    overflow-wrap: anywhere;
+}
+.deskripsi p { margin: 0 0 1em; }
+.deskripsi p:last-child { margin-bottom: 0; }
+
+@media (max-width: 900px) {
+    .detail { gap: 28px; padding: 26px; }
+}
+
+@media (max-width: 760px) {
+    .detail { grid-template-columns: 1fr; gap: 22px; padding: 20px; }
+    .detail-gambar { max-height: 380px; }
+    .meta { margin: 10px 0 18px; padding-bottom: 16px; }
+}
